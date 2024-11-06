@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FruitCollision : MonoBehaviour
 {
+    public FruitState fruitState;
     public FruitType fruitType;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,6 +18,11 @@ public class FruitCollision : MonoBehaviour
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
             }
+        }
+
+        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Fruit")
+        {
+            fruitState = FruitState.Collision;
         }
     }
 }
@@ -32,4 +38,10 @@ public enum FruitType
     Strawberry = 8,
     Kiwi = 9,
     Grapes = 10
+}
+public enum FruitState
+{
+    Idle,
+    Falling,
+    Collision
 }

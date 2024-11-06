@@ -8,7 +8,15 @@ public class TopWall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fruit"))
         {
+            collision.GetComponent<FruitCollision>().fruitState = FruitState.Falling;
             FruitSpawner.Instance.SpawnRandom();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Fruit") && collision.GetComponent<FruitCollision>().fruitState == FruitState.Collision)
+        {
+            Debug.Log("Game Over");
         }
     }
 }

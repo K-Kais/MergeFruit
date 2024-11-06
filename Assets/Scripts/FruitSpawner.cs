@@ -24,6 +24,8 @@ public class FruitSpawner : MonoBehaviour
     public void Spawn(FruitType fruitType, Vector2 position)
     {
         GameObject fruit = Instantiate(fruitPrefabs[(int)fruitType], position, Quaternion.identity);
+        fruit.GetComponent<FruitCollision>().fruitState = FruitState.Collision;
+        fruit.GetComponent<CircleCollider2D>().isTrigger = false;
         var rb = fruit.GetComponent<Rigidbody2D>();
         rb.gravityScale = 1f;
         rb.AddForce(Vector2.up * (int)fruitType, ForceMode2D.Impulse);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MouseInput : MonoBehaviour
@@ -22,6 +23,7 @@ public class MouseInput : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             fruit.GetComponent<Rigidbody2D>().gravityScale = 1f;
+            fruit.GetComponent<CircleCollider2D>().isTrigger = false;
             fruit = null;
         }
     }
