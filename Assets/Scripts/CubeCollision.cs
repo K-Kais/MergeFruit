@@ -7,7 +7,7 @@ public class CubeCollision : MonoBehaviour
     public CubeType cubeType;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Cube" && collision.transform.TryGetComponent<CubeCollision>(out CubeCollision cubeColision))
+        if (collision.transform.TryGetComponent<CubeCollision>(out CubeCollision cubeColision))
         {
             var thisInstanceID = gameObject.GetInstanceID();
             var collisionInstanceID = collision.gameObject.GetInstanceID();

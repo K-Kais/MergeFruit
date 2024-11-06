@@ -6,7 +6,7 @@ public class TopWall : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Cube") && MouseInput.Instance.cube == null)
+        if (MouseInput.Instance.cube == null && collision.transform.TryGetComponent<CubeCollision>(out CubeCollision cubeColision))
         {
             CubeSpawner.Instance.SpawnRandom();
         }
@@ -14,7 +14,7 @@ public class TopWall : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (Gameplay.Instance.gameState != GameStates.Ready) return;
-        if (collision.gameObject.CompareTag("Cube"))
+        if (collision.transform.TryGetComponent<CubeCollision>(out CubeCollision cubeColision))
         {
             PopupManager.Instance.ShowPopup<PopupGameOver>();
             Gameplay.Instance.gameState = GameStates.GameOver;

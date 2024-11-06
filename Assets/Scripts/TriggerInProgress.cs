@@ -19,7 +19,7 @@ public class TriggerInProgress : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Cube")
+        if (collision.transform.TryGetComponent<CubeCollision>(out CubeCollision cubeColision))
         {
             Gameplay.Instance.gameState = GameStates.InProgress;
             countDown = 0.5f;
