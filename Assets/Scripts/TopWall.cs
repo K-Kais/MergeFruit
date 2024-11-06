@@ -7,16 +7,16 @@ public class TopWall : MonoBehaviour
     [SerializeField] private float countDown = 1.5f;
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Fruit"))
+        if (collision.gameObject.CompareTag("Cube"))
         {
-            collision.GetComponent<FruitCollision>().fruitState = FruitState.Falling;
-            FruitSpawner.Instance.SpawnRandom();
+            collision.GetComponent<CubeCollision>().cubeState = CubeState.Falling;
+            CubeSpawner.Instance.SpawnRandom();
             countDown = 1.5f;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Fruit") && collision.GetComponent<FruitCollision>().fruitState == FruitState.Collision)
+        if (collision.gameObject.CompareTag("Cube") && collision.GetComponent<CubeCollision>().cubeState == CubeState.Collision)
         {
             countDown -= Time.deltaTime;
             if (countDown <= 0)

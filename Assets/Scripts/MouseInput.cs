@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseInput : MonoBehaviour
 {
     public static MouseInput Instance;
-    public Transform fruit;
+    public Transform cube;
     [SerializeField] private float litmitX;
     private void Awake()
     {
@@ -14,17 +14,17 @@ public class MouseInput : MonoBehaviour
     }
     private void Update()
     {
-        if (fruit == null) return;
+        if (cube == null) return;
         if (Input.GetMouseButton(0))
         {
             var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            fruit.position = new Vector2(Mathf.Clamp(mousePosition.x, -litmitX, litmitX), 4f);
+            cube.position = new Vector2(Mathf.Clamp(mousePosition.x, -litmitX, litmitX), 4f);
         }
         if (Input.GetMouseButtonUp(0))
         {
-            fruit.GetComponent<Rigidbody2D>().gravityScale = 1f;
-            fruit.GetComponent<CircleCollider2D>().isTrigger = false;
-            fruit = null;
+            cube.GetComponent<Rigidbody2D>().gravityScale = 1f;
+            cube.GetComponent<CircleCollider2D>().isTrigger = false;
+            cube = null;
         }
     }
 }

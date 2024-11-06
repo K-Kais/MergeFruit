@@ -9,9 +9,9 @@ public class Gameplay : MonoBehaviour
     {
         Instance = this;
     }
-    public void MergeFruit(Vector2 currentPos, Vector2 targetPos, FruitType fruitType)
+    public void MergeCube(Vector2 currentPos, Vector2 targetPos, CubeType cubeType)
     {
         Vector2 middlePos = (currentPos + targetPos) / 2;
-        FruitSpawner.Instance.Spawn(fruitType, middlePos);
+        CubeSpawner.Instance.Spawn(cubeType, middlePos);
     }
 }

@@ -563,7 +563,7 @@ Transform:
   m_GameObject: {fileID: 367988339}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 2.28, z: 0}
   m_LocalScale: {x: 7, y: 0.02, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1755,7 +1755,7 @@ GameObject:
   - component: {fileID: 1702688818}
   - component: {fileID: 1702688819}
   m_Layer: 0
-  m_Name: FruitSpawner
+  m_Name: CubeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1788,17 +1788,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3891d6b48dc794680a355399df352e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitPrefabs:
-  - {fileID: 1671737953921957306, guid: 57f6550bbb5192349ae5cc0fa821ded4, type: 3}
-  - {fileID: 94581710780254819, guid: 8c5aee83e4d71bb4389eb0f24e074dd8, type: 3}
-  - {fileID: 2058077415262082830, guid: 24df8de49bf08e749b478e30b39a0392, type: 3}
-  - {fileID: 3345823524196405344, guid: a8f3debd9b0a60b4e88a6d134db0d4fb, type: 3}
-  - {fileID: 250900077432186675, guid: afdaf111dcde75e4a8fe7eafe71ca3b0, type: 3}
-  - {fileID: 3107003763186712966, guid: 8953a3f623ecdc043a50181eb26db741, type: 3}
-  - {fileID: 6618530430285471352, guid: 2ab533c844ed58242a1380ba8ec7d021, type: 3}
-  - {fileID: 5905878210386678810, guid: 3a1e9ea781dd66949bf0debc2714776a, type: 3}
-  - {fileID: 3320319751644858829, guid: 9d3e1a952976e3c448e755bd0bfee3dd, type: 3}
-  - {fileID: 1679209302039627187, guid: 68d5ef22be0316e439fe99131336e4ae, type: 3}
+  cubePrefabs:
+  - {fileID: 3150276423020450865, guid: b0655987231ceab4a97260a3d0edc8b6, type: 3}
+  - {fileID: 8258479935350851259, guid: 1051dddacac15ed458b58b994a23fe4d, type: 3}
+  - {fileID: 7907765256941937788, guid: 0f96e5f25f288e34b8beaad16fa415a9, type: 3}
+  - {fileID: 9082469669289850406, guid: f3036994fb690b647b486891810668ce, type: 3}
+  - {fileID: 1286893043519776450, guid: 050aed871d675f440a13cf0734c83c84, type: 3}
+  - {fileID: 7993994181201246440, guid: e52b13c1cd0c3e24d9984dcfcf30544a, type: 3}
+  - {fileID: 2340595133223636266, guid: aae8d347426d4db44ad760a03c0b5aae, type: 3}
+  - {fileID: 6508173268175897697, guid: 56d3a9b88e8f6fb40a374b0674295d3b, type: 3}
+  - {fileID: 642784778687901939, guid: 5aae70414f4f5df4096c44aafba70c34, type: 3}
+  - {fileID: 7407470012492433191, guid: 05c8d5a036ac7f44c87bd602357a7131, type: 3}
+  - {fileID: 982952592680025572, guid: a484f347d6333844c993cfbc026f03b3, type: 3}
+  - {fileID: 5623123233675786575, guid: b4775c7bd0d97314e973a6b4e64da939, type: 3}
 --- !u!1 &1739107691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427f3a60e852b0c419f49cc66a54293b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruit: {fileID: 0}
+  cube: {fileID: 0}
   litmitX: 2.6
 --- !u!1 &1874150025
 GameObject:

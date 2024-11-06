@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Ground
   - Top
-  - Fruit
+  - Cube
   layers:
   - Default
   - TransparentFX
