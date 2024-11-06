@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Gameplay : MonoBehaviour
 {
-   public static Gameplay Instance;
+    public static Gameplay Instance;
+    public GameStates gameState;
     private void Awake()
     {
         Instance = this;
@@ -14,4 +15,10 @@ public class Gameplay : MonoBehaviour
         Vector2 middlePos = (currentPos + targetPos) / 2;
         CubeSpawner.Instance.Spawn(cubeType, middlePos);
     }
+}
+public enum GameStates
+{
+    Ready,
+    InProgress,
+    GameOver
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CubeCollision : MonoBehaviour
 {
-    public CubeState cubeState;
     public CubeType cubeType;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,11 +17,6 @@ public class CubeCollision : MonoBehaviour
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
             }
-        }
-
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Cube")
-        {
-            cubeState = CubeState.Collision;
         }
     }
 }
@@ -40,10 +34,4 @@ public enum CubeType
     Cube10 = 10,
     Cube11 = 11,
     Cube12 = 12
-}
-public enum CubeState
-{
-    Idle,
-    Falling,
-    Collision
 }

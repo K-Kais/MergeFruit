@@ -24,11 +24,9 @@ public class CubeSpawner : MonoBehaviour
     public void Spawn(CubeType cubeType, Vector2 position)
     {
         GameObject cube = Instantiate(cubePrefabs[(int)cubeType], position, Quaternion.identity);
-        cube.GetComponent<CubeCollision>().cubeState = CubeState.Collision;
         cube.GetComponent<CircleCollider2D>().isTrigger = false;
         var rb = cube.GetComponent<Rigidbody2D>();
         rb.gravityScale = 1f;
         rb.AddForce(Vector2.up * (int)cubeType, ForceMode2D.Impulse);
-
     }
 }

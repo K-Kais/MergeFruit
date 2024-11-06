@@ -4,26 +4,20 @@ using UnityEngine;
 
 public class TopWall : MonoBehaviour
 {
-    [SerializeField] private float countDown = 1.5f;
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Cube"))
+        if (collision.gameObject.CompareTag("Cube") && MouseInput.Instance.cube == null)
         {
-            collision.GetComponent<CubeCollision>().cubeState = CubeState.Falling;
             CubeSpawner.Instance.SpawnRandom();
-            countDown = 1.5f;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Cube") && collision.GetComponent<CubeCollision>().cubeState == CubeState.Collision)
+        if (Gameplay.Instance.gameState != GameStates.Ready) return;
+        if (collision.gameObject.CompareTag("Cube"))
         {
-            countDown -= Time.deltaTime;
-            if (countDown <= 0)
-            {
-                countDown = 1.5f;
-                PopupManager.Instance.ShowPopup<PopupGameOver>();
-            }
+            PopupManager.Instance.ShowPopup<PopupGameOver>();
+            Gameplay.Instance.gameState = GameStates.GameOver;
         }
     }
 }
