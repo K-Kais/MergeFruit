@@ -14,10 +14,11 @@ public class MouseInput : MonoBehaviour
     private void Update()
     {
         if (fruit == null) return;
-
-        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        fruit.position = new Vector2(Mathf.Clamp(mousePosition.x, -litmitX, litmitX), 4f);
-
+        if (Input.GetMouseButton(0))
+        {
+            var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            fruit.position = new Vector2(Mathf.Clamp(mousePosition.x, -litmitX, litmitX), 4f);
+        }
         if (Input.GetMouseButtonUp(0))
         {
             fruit.GetComponent<Rigidbody2D>().gravityScale = 1f;
